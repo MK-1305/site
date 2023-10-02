@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#loading {
+    position: fixed;
+    inset: 0;
+    display: grid;
+    place-items: center;
+}
+
+#loading-logo {
+    background-image: url('img/ringo.jpg');
+    width: 50vh;
+    height: 50vh;
+    background-size: cover;
+    z-index: 9998;
+    animation: loading-logo 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading-logo {
+    0% {transform: scale(0);}
+    10% {transform: scale(1.1);}
+    15% {transform: scale(1);}
+    94% {transform: scale(1);}
+    96% {transform: scale(1.15);}
+    100% {transform: scale(0);}
+}
+
+#loading-screen {
+    background-color: #e47e2b;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    translate: 0 100vh;
+    animation: loading-screen 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 5s;
+}
+
+@keyframes loading-screen {
+    0% {transform: translateY(0, 0);}
+    100% {transform: translateY(-200vh);} 
+}
+
+.main-visual {
+    display: grid;
+    place-items: center;
+    padding-top: 10rem;
+}
+
+/* ロードが終わった後に出したいので初期値は透明に */
+.gunya1 {
+    opacity: 0;
+    width: 20vw;
+    height: 20vh;
+    border-radius: 50%;
+    background-color: antiquewhite;
+    animation: title-back 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 7s;
+}
+
+@keyframes title-back {
+    0% {opacity: 0; transform: translate(0,-10);}
+    10%{opacity: 1; transform: translate(0,10);}
+    15%{opacity: 1; transform: translate(0,0);}
+    20%{opacity: 1; transform: translate(0,0); transform: scale(1);}
+    /* 伸ばす */
+    /* 50% {opacity: 1; transform: scaleX(2)} */
+    100% {opacity: 1; transform: scaleX(3)}
+}
+
+.main-visual-title {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 2rem;
+    opacity: 0;
+    animation: title 1s;
+    animation-delay: 8s;
+    /* text-shadow: 2; */
+}
+
+@keyframes title {
+    0% {}
+}
